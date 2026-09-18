@@ -1,0 +1,6 @@
+google-genai>=2.8.0
+aiohttp>=3.11.0
+fastapi
+uvicorn
+python-dotenv
+rich

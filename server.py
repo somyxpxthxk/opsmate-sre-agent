@@ -3,7 +3,15 @@ import json
 import asyncio
 import logging
 import traceback
+import base64
 from typing import Optional, List, Dict, Any
+
+# Cloud Deployment Setup: Decode GCP JSON from Base64 string if present
+if "GCP_CREDENTIALS_BASE64" in os.environ:
+    creds_json = base64.b64decode(os.environ["GCP_CREDENTIALS_BASE64"]).decode("utf-8")
+    with open("cloud_credentials.json", "w") as f:
+        f.write(creds_json)
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.abspath("cloud_credentials.json")
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware

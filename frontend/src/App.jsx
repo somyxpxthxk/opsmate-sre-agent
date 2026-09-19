@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Send, Activity, RotateCcw, Zap, Database, KeyRound, Radio } from 'lucide-react';
 import './index.css';
 
-const API_BASE = "http://127.0.0.1:8000/api";
+const API_BASE = "https://opsmate-sre-agent.onrender.com/api";
 
 const INCIDENTS = [
   {

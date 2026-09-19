@@ -29,6 +29,7 @@ _original_files: dict[str, str] = {}
 
 def _append_log(service_name: str, lines: list[str]):
     """Append lines to a service's log file."""
+    os.makedirs(LOG_DIR, exist_ok=True)
     log_path = os.path.join(LOG_DIR, f"{service_name}.log")
     timestamp = time.strftime("%Y-%m-%dT%H:%M:%S+05:30")
     with open(log_path, "a", encoding="utf-8") as f:

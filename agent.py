@@ -94,7 +94,7 @@ def create_opsmate_chat():
         temperature=0.0
     )
     return client.aio.chats.create(
-        model="gemini-3.8-flash", 
+        model="gemini-1.5-flash", 
         config=config
     )
 
